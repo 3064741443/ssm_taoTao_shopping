@@ -1,4 +1,4 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -16,13 +16,13 @@
     <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-    $(function(){
-    	$("#adminLogin").click(function(){
-    		$.ajax({
+	$(function() {
+		$("#adminLogin").click(function() {
+			$.ajax({
 				type : "POST",
 				data : $("#myform").serialize(),
 				url : "admin.action",
-				dataType : "JSON", 
+				dataType : "JSON",
 				success : function(data) {
 					if (data.code == 1) {
 						alert("登录成功！");
@@ -32,8 +32,8 @@
 					}
 				}
 			});
-    	});
-    });
+		});
+	});
 </script>
 </head>
 
@@ -44,7 +44,7 @@
 				<div class="panel">
 					<div class="panel-heading login-top">用户登录</div>
 					<div class="panel-body">
-						<form class="form-group col-lg-10 col-md-offset-1"  id="myform">
+						<form class="form-group col-lg-10 col-md-offset-1" id="myform">
 
 							<div class="input-group">
 								<label for="aname" class="input-group-addon">用户名</label>
@@ -57,7 +57,7 @@
 							</div>
 							<br />
 							<div class="input-group">
-							    <dt>验证码：</dt>
+								<dt>验证码：</dt>
 								<input type="text" name="zccode" id="zccode" value="请输入验证码" style="font-size: 14px; width: 100px" />
 								<img alt="" src="image.jsp" onclick="changeVilidateCode(this)" border="0" title="点击图片刷新验证码" size="10" />
 							</div>
