@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace:命名空间 -->
+<mapper namespace="com.yc.bean.AdminMapper">	
+
+	<!--管理员根据用户名和密码进行登录 -->
+	<select id="adminLogin" resultType="Admin" parameterType="Admin">
+		select aid,aname,apwd from admin where aname=#{aname} and apwd=#{apwd}
+	</select>
+
+</mapper>
